@@ -33,7 +33,6 @@ $this->params['breadcrumbs'][] = $this->title;
                         'id',
                         'title',
                         'url:url',
-                        'project',
                         'redirect',
                         'seo_title',
                         'seo_description',

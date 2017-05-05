@@ -1,6 +1,6 @@
 <?php
 
-namespace backend\controllers;
+namespace wokster\pages\controllers;
 
 use yii;
 use wokster\pages\models\Page;
@@ -17,20 +17,6 @@ class PageController extends Controller
     public function behaviors()
     {
         return [
-            'access' => [
-                'class' => \yii\filters\AccessControl::className(),
-                'rules' => [
-                    [
-                        'allow' => true,
-                        'roles' => ['adminka'],
-                    ],
-                    [
-                        'actions' => ['index', 'update', 'create', 'view', 'delete'],
-                        'allow' => true,
-                        'roles' => ['admin'],
-                    ],
-                ],
-            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [

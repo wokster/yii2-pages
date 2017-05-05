@@ -18,7 +18,7 @@ class PageSearch extends Page
     public function rules()
     {
         return [
-            [['id','project_id'], 'integer'],
+            [['id'], 'integer'],
             [['title', 'text', 'redirect', 'url'], 'safe'],
         ];
     }
@@ -57,7 +57,6 @@ class PageSearch extends Page
 
         $query->andFilterWhere([
             'id' => $this->id,
-            'project_id' => $this->project_id,
         ]);
 
         $query->andFilterWhere(['like', 'title', $this->title])

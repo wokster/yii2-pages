@@ -13,7 +13,6 @@ use Yii;
  * @property string $text
  * @property string $redirect
  * @property string $url
- * @property string $project_id
  */
 class Page extends \yii\db\ActiveRecord
 {
@@ -34,7 +33,7 @@ class Page extends \yii\db\ActiveRecord
     {
         return [
             'seo' => [
-                'class' => SeoBehavior::className(),
+                'class' => \wokster\seomodule\SeoBehavior::className(),
                 'body_attribute' => 'text',
             ],
         ];
@@ -47,8 +46,6 @@ class Page extends \yii\db\ActiveRecord
     {
         return [
             [['title', 'text', 'url'], 'required'],
-            [['project_id'], 'integer', 'min'=>0, 'max'=>2],
-            [['project_id'], 'default', 'value'=>1],
             [['text'], 'string'],
             [['title', 'redirect', 'url'], 'string', 'max' => 255],
             [['url'], 'unique']
@@ -66,8 +63,6 @@ class Page extends \yii\db\ActiveRecord
             'text' => 'Контент',
             'redirect' => 'Редирект',
             'url' => 'ЧПУ',
-            'project_id' => 'Видимость в проекте',
-            'project' => 'Видимость в проекте',
         ];
     }
     /**
@@ -79,12 +74,5 @@ class Page extends \yii\db\ActiveRecord
             'redirect' => 'Поле для ссылки на которую будет происходить переадресация. Если не заполнено - эта страница доступна, если заполнено при запросе страницы произойдет редирект по указанному адресу.',
             'project_id' => 'Доступ к странице из разных проектов',
         ];
-    }
-    public static function getProjectList(){
-        return ['везде','только основной', 'только reha'];
-    }
-    public function getProject(){
-        $list = $this->getProjectList();
-        return $list[$this->project_id];
     }
 }

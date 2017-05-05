@@ -18,7 +18,6 @@ $this->params['breadcrumbs'][] = $this->title;
 
 </div>
 <?php
-$this->registerJsFile('/js/jquery.liTranslit.js',['depends' => [\yii\web\JqueryAsset::className()]]);
 $this->registerJs("
 $(function(){
   $('#page-title').liTranslit({

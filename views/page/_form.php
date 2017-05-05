@@ -53,11 +53,8 @@ use yii\widgets\ActiveForm;
                     <div class="col-xs-12 col-md-6">
                       <?= $form->field($model, 'redirect')->textInput(['maxlength' => true]) ?>
                     </div>
-                    <div class="col-xs-12 col-md-6">
-                      <?= $form->field($model, 'project_id')->dropDownList($model->getProjectList()) ?>
-                    </div>
                   </div>
-                  <?= \common\widgets\seoformwidget\SeoFormWidget::widget(['model'=>$model]);?>
+                  <?= \wokster\seomodule\SeoFormWidget::widget(['model'=>$model]);?>
                   <div class="row">
                     <div class="col-xs-12 col-md-12">
                       <div class="form-group">
