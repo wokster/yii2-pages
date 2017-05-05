@@ -1,0 +1,21 @@
+{
+    "name": "wokster/yii2-pages",
+    "description": "Yii2 module to add static pages",
+    "type": "yii2-extension",
+    "keywords": ["yii2","extension","seo","module","page"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Maksym Tymofeiev",
+            "email": "wokster@list.ru"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "~2.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "wokster\\pages\\": ""
+        }
+    }
+}
