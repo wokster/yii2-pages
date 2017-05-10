@@ -12,7 +12,8 @@
     ],
     "require": {
         "yiisoft/yii2": "~2.0.0",
-        "wokster/yii2-seo-module": "dev-master"
+        "wokster/yii2-seo-module": "1.*",
+        "wokster/yii2-fontawesome-dropdown-widget": "1.*"
     },
     "autoload": {
         "psr-4": {
